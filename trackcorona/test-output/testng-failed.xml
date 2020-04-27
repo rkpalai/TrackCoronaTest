@@ -5,10 +5,9 @@
     <classes>
       <class name="trackcoronaTests.HomeTest">
         <methods>
-          <include name="verifyIndiaData"/>
-          <include name="verifyLogo"/>
-          <include name="verifyWorldData"/>
-          <include name="verifyMenu"/>
+          <include name="close"/>
+          <include name="verifyChartButton"/>
+          <include name="lunchBrowser"/>
         </methods>
       </class> <!-- trackcoronaTests.HomeTest -->
     </classes>

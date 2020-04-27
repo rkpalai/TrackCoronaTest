@@ -1,44 +1,90 @@
 package trackcoronaTests;
 
+import org.testng.annotations.Test;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import trackcoronaCommonLib.Base;
 import trackcoronaObjRepo.HomePage;
 
-public class HomeTest {
+public class HomeTest extends Base {
 
+	
 	@Test
-	public static void verifyLogo() {
-
-		HomePage homePage = PageFactory.initElements(Base.Driver, HomePage.class);
-		boolean expected = homePage.Logo.isDisplayed();
-		Assert.assertEquals(true, expected, "Logo not present");
+	public void verifyLogo() {
+		System.out.println("in Test");
+		HomePage homePage = PageFactory.initElements(Base.driver, HomePage.class);
+		boolean expected = homePage.logo.isDisplayed();
+		Assert.assertEquals(true, expected, "logo not present");
 	}
 
 	@Test
-	public static void verifyMenu() {
-
-		HomePage homePage = PageFactory.initElements(Base.Driver, HomePage.class);
-		boolean expected = homePage.menu.isDisplayed();
-		Assert.assertEquals(true, expected, "Menu not present");
+	public  void verifyMenu() {
+		HomePage homePage = PageFactory.initElements(Base.driver, HomePage.class);
+		boolean expected1 = homePage.menu.isDisplayed();
+		Assert.assertEquals(true, expected1, "Menu not present");
 	}
 
 	@Test
-	public static void verifyWorldData() {
-
-		HomePage homePage = PageFactory.initElements(Base.Driver, HomePage.class);
-		boolean expected = homePage.world.isDisplayed();
+	public  void verifyWorldTab() {
+		HomePage homePage = PageFactory.initElements(Base.driver, HomePage.class);
+		boolean expected = homePage.homeTabworld.isDisplayed();
 		Assert.assertEquals(true, expected, "World Data not present");
 	}
 
 	@Test
-	public static void verifyIndiaData() {
+	public  void verifyIndiaTab() {
+		HomePage homePage = PageFactory.initElements(Base.driver, HomePage.class);
 
-		HomePage homePage = PageFactory.initElements(Base.Driver, HomePage.class);
-		boolean expected = homePage.india.isDisplayed();
+		boolean expected = homePage.homeTabIndia.isDisplayed();
 		Assert.assertEquals(true, expected, "India Data not present");
 	}
+	
+	@Test
+	public  void verifyHomeMenu() {
+		HomePage homePage = PageFactory.initElements(Base.driver, HomePage.class);
 
+		Assert.assertEquals(true, homePage.homeMenu.isDisplayed(), "India Data not present");
+	}
+	@Test
+	public  void verifyIndiaMenu() {
+		HomePage homePage = PageFactory.initElements(Base.driver, HomePage.class);
+
+		Assert.assertEquals(true, homePage.indiaMenu.isDisplayed(), "India Data not present");		
+	}
+	@Test
+	public  void verifyLiveTableMenu() {
+		HomePage homePage = PageFactory.initElements(Base.driver, HomePage.class);
+
+		Assert.assertEquals(true, homePage.liveTableMenu.isDisplayed(), "India Data not present");		
+	}
+	@Test
+	public  void verifyLiveMapMenu() {
+		HomePage homePage = PageFactory.initElements(Base.driver, HomePage.class);
+		Assert.assertEquals(true, homePage.liveMapMenu.isDisplayed(), "India Data not present");		
+	}
+	@Test
+	public  void verifyCaseAnalysisMenu() {
+		HomePage homePage = PageFactory.initElements(Base.driver, HomePage.class);
+		Assert.assertEquals(true, homePage.caseAnalysisMenu.isDisplayed(), "India Data not present");
+	}
+	@Test
+	public  void verifyPredictionMenu() {
+		HomePage homePage = PageFactory.initElements(Base.driver, HomePage.class);
+		Assert.assertEquals(true, homePage.predictionMenu.isDisplayed(), "India Data not present");
+	}
+	@Test
+	public  void verifyAboutCoronaMenu() {
+		HomePage homePage = PageFactory.initElements(Base.driver, HomePage.class);
+		Assert.assertEquals(true, homePage.aboutCoronaMenu.isDisplayed(), "India Data not present");
+	}
+	@Test
+	public  void verifyContributorMenu() {
+		HomePage homePage = PageFactory.initElements(Base.driver, HomePage.class);
+		Assert.assertEquals(true, homePage.contributors.isDisplayed(), "India Data not present");
+	}
+	@Test
+	public  void verifyChartButton() {
+		HomePage homePage = PageFactory.initElements(Base.driver, HomePage.class);
+		Assert.assertEquals(true, homePage.chartButton.isDisplayed(), "India Data not present");
+	}
 }
